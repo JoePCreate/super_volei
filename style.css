@@ -1,0 +1,424 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES (Extraídas do Logotipo)
+   ========================================================================== */
+:root {
+    --cor-ouro: #d4af37;        /* Dourado metálico refinado */
+    --cor-azul-escuro: #0f2a4a; /* Azul marinho profundo do miolo/estrelas */
+    --cor-terracota: #d95334;   /* Vermelho texturizado de fundo */
+    --cor-clara: #f7f9fa;       /* Off-white para contrastes limpos */
+    --cor-escura: #0a0f14;      /* Fundo ultra-dark moderno */
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-texto: 'Open Sans', sans-serif;
+}
+
+/* ==========================================================================
+   RESETS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-escura);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo-texto {
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+.text-gold { color: var(--cor-ouro); }
+.text-blue { color: #3a86ff; } /* Tom mais vivo para links/destaques no escuro */
+.text-white { color: #ffffff; }
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    color: #a0aec0;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--cor-ouro);
+    color: var(--cor-escura);
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: var(--cor-escura);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGAÇÃO
+   ========================================================================== */
+.navbar {
+    background-color: rgba(10, 15, 20, 0.95);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 55px;
+    width: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--cor-ouro);
+}
+
+.logo-texto {
+    font-size: 1.4rem;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #cbd5e0;
+}
+
+.nav-links a:hover {
+    color: var(--cor-ouro);
+}
+
+.btn-nav {
+    padding: 8px 20px;
+    background-color: var(--cor-azul-escuro);
+    border: 1px solid var(--cor-ouro);
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.btn-nav:hover {
+    background-color: var(--cor-ouro);
+    color: var(--cor-escura);
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (HOME)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* Imagem conceitual escura de fundo de quadra de vôlei */
+    background: url('https://images.unsplash.com/photo-1592656094270-b9bdb947def2?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(10,15,20,0.95) 40%, rgba(15,42,74,0.6) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* ==========================================================================
+   SEÇÃO HISTÓRIA
+   ========================================================================== */
+.bg-dark { background-color: var(--cor-escura); }
+
+.historia-texto p {
+    margin-bottom: 15px;
+    color: #cbd5e0;
+}
+
+.historia-imagem-box {
+    position: relative;
+    text-align: center;
+}
+
+.img-destaque {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 5px solid var(--cor-ouro);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.quadrado-decorativo {
+    position: absolute;
+    top: 10%; left: 15%;
+    width: 70%; height: 80%;
+    border: 3px solid var(--cor-terracota);
+    z-index: 1;
+    transform: rotate(-5deg);
+}
+
+/* ==========================================================================
+   SEÇÃO ELENCO (CARDS)
+   ========================================================================== */
+.bg-light { 
+    background-color: var(--cor-clara); 
+    color: var(--cor-escura);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card-atleta {
+    background-color: #ffffff;
+    border-bottom: 4px solid var(--cor-azul-escuro);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-atleta:hover {
+    transform: translateY(-5px);
+    border-bottom-color: var(--cor-ouro);
+}
+
+.avatar-placeholder {
+    height: 240px;
+    background-color: var(--cor-azul-escuro);
+    color: rgba(212,175,55,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-family: var(--fonte-principal);
+    font-weight: 900;
+}
+
+.atleta-info {
+    padding: 20px;
+}
+
+.atleta-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--cor-azul-escuro);
+}
+
+.posicao {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* ==========================================================================
+   SEÇÃO COMPETIÇÕES
+   ========================================================================== */
+.bg-terracota {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), var(--cor-terracota);
+}
+
+.tabela-jogos {
+    background: rgba(250, 250, 250, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.jogo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.jogo-linha:last-child {
+    border-bottom: none;
+}
+
+.jogo-torneio {
+    background-color: var(--cor-azul-escuro);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--cor-ouro);
+}
+
+.jogo-equipes {
+    font-size: 1.2rem;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.jogo-data {
+    font-weight: bold;
+    color: var(--cor-ouro);
+}
+
+/* ==========================================================================
+   SEÇÃO PROJETOS
+   ========================================================================== */
+.card-projeto {
+    background: linear-gradient(145deg, #111823, #0a0f14);
+    padding: 40px;
+    border-left: 5px solid var(--cor-ouro);
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-projeto h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.card-projeto p {
+    color: #a0aec0;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer {
+    background-color: #05080c;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.sociais a {
+    margin-left: 20px;
+    color: #cbd5e0;
+}
+
+.sociais a:hover {
+    color: var(--cor-ouro);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Para simplificar o menu mobile sem JS */
+    .hero-content h1 { font-size: 2.3rem; }
+    .section-title { font-size: 2rem; }
+    .jogo-linha { flex-direction: column; text-align: center; }
+    .jogo-equipes { margin-left: 0; }
+    .footer-content { flex-direction: column; text-align: center; }
+}
